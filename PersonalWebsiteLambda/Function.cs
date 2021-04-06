@@ -28,12 +28,13 @@ namespace PersonalWebsiteLambda
         public async Task<string> FunctionHandler(SenderData senderData, ILambdaContext context)
         {
             var mailingList = new MailingList();
+            var personalEmail = Environment.GetEnvironmentVariable("PERSONAL_EMAIL");
             mailingList.List = new List<Recipient>()
-        {
-            new Recipient() { Email = "bmondragonbrozon@gmail.com", Name = "Bernardo Mondragon Brozon"}
-        };
+            {
+                new Recipient() { Email = personalEmail, Name = "Bernardo Mondragon Brozon"}
+            };
             await SendMessageFromVisitor(mailingList.List, senderData);
-            return "Rejection emails were sent";
+            return "Email has been sent";
         }
 
         /// <summary>
@@ -47,11 +48,13 @@ namespace PersonalWebsiteLambda
             {
                 foreach (var recipient in recipients)
                 {
-                    Console.WriteLine($"\nSending rejection email to: {recipient.Name} :: {recipient.Email}");
+                    var personalEmail = Environment.GetEnvironmentVariable("PERSONAL_EMAIL");
+                    Console.WriteLine($"\nSending email from: {personalEmail}");
+                    Console.WriteLine($"\nSending email to: {recipient.Name} :: {recipient.Email}");
                     var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
                     var client = new SendGridClient(apiKey);
-                    var from = new EmailAddress("bmondragonbrozon@gmail.com", "Bernardo Mondragon Brozon");
-                    var subject = "Personal website message";
+                    var from = new EmailAddress(personalEmail, "Bernardo Mondragon Brozon");
+                    var subject = "Message from visitor";
                     var to = new EmailAddress(recipient.Email, recipient.Name);
                     var plainTextContent = "";
                     var htmlContent = $@"<!DOCTYPE html>
@@ -182,6 +185,7 @@ namespace PersonalWebsiteLambda
                 ";
                     var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
                     var response = await client.SendEmailAsync(msg).ConfigureAwait(false);
+                    Console.WriteLine($"SendGrid reponse: " + response);
                     Console.WriteLine($"SendGrid reponse status: " + response.StatusCode);
                 }
             }
