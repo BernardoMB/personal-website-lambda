@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bmond\\source\\repos\\PersonalWebsiteLambda\\PersonalWebsiteLambda\\PersonalWebsiteLambda.csproj": {}
+    "C:\\Users\\bmond\\Documents\\workspace\\Personal Website\\send-email-lambda\\PersonalWebsiteLambda\\PersonalWebsiteLambda.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bmond\\source\\repos\\PersonalWebsiteLambda\\PersonalWebsiteLambda\\PersonalWebsiteLambda.csproj": {
+    "C:\\Users\\bmond\\Documents\\workspace\\Personal Website\\send-email-lambda\\PersonalWebsiteLambda\\PersonalWebsiteLambda.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bmond\\source\\repos\\PersonalWebsiteLambda\\PersonalWebsiteLambda\\PersonalWebsiteLambda.csproj",
+        "projectUniqueName": "C:\\Users\\bmond\\Documents\\workspace\\Personal Website\\send-email-lambda\\PersonalWebsiteLambda\\PersonalWebsiteLambda.csproj",
         "projectName": "PersonalWebsiteLambda",
-        "projectPath": "C:\\Users\\bmond\\source\\repos\\PersonalWebsiteLambda\\PersonalWebsiteLambda\\PersonalWebsiteLambda.csproj",
+        "projectPath": "C:\\Users\\bmond\\Documents\\workspace\\Personal Website\\send-email-lambda\\PersonalWebsiteLambda\\PersonalWebsiteLambda.csproj",
         "packagesPath": "C:\\Users\\bmond\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bmond\\source\\repos\\PersonalWebsiteLambda\\PersonalWebsiteLambda\\obj\\",
+        "outputPath": "C:\\Users\\bmond\\Documents\\workspace\\Personal Website\\send-email-lambda\\PersonalWebsiteLambda\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\bmond\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,17 +67,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "linux-x64": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -21,6 +21,8 @@ namespace PersonalWebsiteLambda
         /// To use this handler to respond to an AWS event, reference the appropriate package from 
         /// https://github.com/aws/aws-lambda-dotnet#events
         /// and change the string input parameter to the desired event type.
+        /// 
+        /// TODO: Update function to .Net 6.0 or greater
         /// </summary>
         /// <param name="input"></param>
         /// <param name="context"></param>

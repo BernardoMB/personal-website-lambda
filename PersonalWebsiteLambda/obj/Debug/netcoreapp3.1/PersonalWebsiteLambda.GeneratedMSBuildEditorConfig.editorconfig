@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = PersonalWebsiteLambda
+build_property.ProjectDir = C:\Users\bmond\Documents\workspace\Personal Website\send-email-lambda\PersonalWebsiteLambda\
